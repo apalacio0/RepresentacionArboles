@@ -21,7 +21,7 @@ class Rama:
         self.grosor: float = grosor
         self.rama_madre: Rama = rama_madre
         self.origen: tuple = self.calcular_origen(altura_rama_madre = altura_rama_madre)
-        self.direccion: tuple = self.calcular_direccion(math.radians(phi), math.radians(theta))
+        self.direccion: tuple = self.calcular_direccion(phi = math.radians(phi), theta = math.radians(theta))
         factor = self.longitud / 2
         self.centro: tuple = tuple(ori + dir * factor for ori, dir in zip(self.origen, self.direccion))
         self.ramas_hijas: list[Rama] = []
@@ -47,12 +47,12 @@ class Rama:
             rama.add_fruto(fruto = fruto)
 
         for rama_hija_data in data['ramas_hijas']:
-            rama_hija = Rama.crear_rama_desde_json(rama_hija_data, rama_madre = rama)
-            rama.add_rama_hija(rama_hija)
+            rama_hija = Rama.crear_rama_desde_json(data = rama_hija_data, rama_madre = rama)
+            rama.add_rama_hija(rama_hija = rama_hija)
         
         return rama
     
-    def resumen_a_txt(self, file: TextIO, nivel: str):
+    def resumen_a_txt(self, file: TextIO, nivel: str) -> None:
         """
         Anota un resumen de la rama en un archivo .txt
         Iterativamente, hace lo mismo con sus frutos y sus subramas
@@ -69,7 +69,7 @@ class Rama:
             Iterativamente, hace lo mismo con sus frutos y sus subramas
             """
             rama = pv.Cylinder(center = self.centro, direction = self.direccion, radius = self.grosor, height = self.longitud)
-            plotter.add_mesh(rama, color = "brown", opacity = 1)
+            plotter.add_mesh(mesh = rama, color = "brown", opacity = 1)
 
             for fruto in self.frutos:
                 fruto.dibujar_fruto(plotter = plotter)

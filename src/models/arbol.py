@@ -19,7 +19,7 @@ class Arbol:
             como tronco del árbol
             Devuelve esa Rama
             """
-            with open(json_path, 'r') as file:
+            with open(file = json_path, mode = 'r') as file:
                 data = json.load(file)
             tronco = Rama.crear_rama_desde_json(data = data)
             return tronco
@@ -30,7 +30,7 @@ class Arbol:
         Después, anota también ese archivo la estructura del árbol, anotando
         de forma anidada un resumen de cada rama y cada fruto del árbol
         """
-        with open(txt_path, "w") as file:
+        with open(file = txt_path, mode = "w") as file:
             file.write("RESUMEN DEL ARBOL:\n")
             file.write("======================\n")
             file.write(f"- Numero de ramas:  {self.num_ramas()}.\n")
@@ -44,7 +44,7 @@ class Arbol:
         """
         Dibuja el árbol en el Plotter de entrada
         """
-        self.tronco.dibujar_rama(plotter)
+        self.tronco.dibujar_rama(plotter = plotter)
 
     def num_ramas(self) -> int:
         """

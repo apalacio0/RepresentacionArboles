@@ -61,7 +61,7 @@ class Fruto:
         radio = self.tamano
         fruto = pv.Sphere(radius = radio, center = self.posicion)
         color = colores[self.estado]
-        plotter.add_mesh(fruto, color = color, opacity = 1)
+        plotter.add_mesh(mesh = fruto, color = color, opacity = 1)
 
     def calcular_posicion(self, rama: 'Rama', altura_rama: float) -> tuple: # type: ignore
         """

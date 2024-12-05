@@ -11,7 +11,7 @@ ARBOL_OUTPUT = 'input_output/outputs/arbol.txt'
 
 plotter = pv.Plotter()
 tierra = pv.Plane(center = (0, 0, 0), direction = (0, 0, 1), i_size = 100, j_size = 100)
-plotter.add_mesh(tierra, color = "green", opacity = 1)
+plotter.add_mesh(mesh = tierra, color = "green", opacity = 1)
 
 # Creación del árbol a partir del archivo de entrada
 
