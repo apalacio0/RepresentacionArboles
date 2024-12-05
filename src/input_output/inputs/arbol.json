@@ -1,0 +1,66 @@
+{
+    "longitud": 10.0,
+    "grosor": 0.5,
+    "altura_rama_madre": 0.0,
+    "phi": 0.0,
+    "theta": 0.0,
+    "ramas_hijas": [
+        {
+            "longitud": 5.0,
+            "grosor": 0.3,
+            "altura_rama_madre": 0.5,
+            "phi": 0.0,
+            "theta": 30.0,
+            "ramas_hijas": [],
+            "frutos": [
+                {
+                    "tamano": 0.35,
+                    "estado": 0,
+                    "altura_rama": 0.8
+                }
+            ]
+        },
+        {
+            "longitud": 6.0,
+            "grosor": 0.3,
+            "altura_rama_madre": 0.8,
+            "phi": 120.0,
+            "theta": 30.0,
+            "ramas_hijas": [
+                {
+                    "longitud": 4.0,
+                    "grosor": 0.2,
+                    "altura_rama_madre": 0.3,
+                    "phi": 30.0,
+                    "theta": 30.0,
+                    "ramas_hijas": [],
+                    "frutos": [
+                        {
+                            "tamano": 0.25,
+                            "estado": 2,
+                            "altura_rama": 0.5
+                        }
+                    ]
+                }
+            ],
+            "frutos": [
+                {
+                    "tamano": 0.35,
+                    "estado": 1,
+                    "altura_rama": 0.3
+                },
+                {
+                    "tamano": 0.35,
+                    "estado": 4,
+                    "altura_rama": 0.5
+                },
+                {
+                    "tamano": 0.35,
+                    "estado": 3,
+                    "altura_rama": 0.9
+                }
+            ]
+        }
+    ],
+    "frutos": []
+}
