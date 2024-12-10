@@ -57,7 +57,7 @@ class Rama:
         Anota un resumen de la rama en un archivo .txt
         Iterativamente, hace lo mismo con sus frutos y sus subramas
         """
-        file.write(f"\n{nivel}- Rama -> Longitud: {self.longitud}m. Radio: {self.grosor}m.\n")
+        file.write(f"\n{nivel}- Rama -> Longitud: {self.longitud:.2f}m. Radio: {self.grosor:.2f}m.\n")
         for fruto in self.frutos:
             fruto.resumen_a_txt(file = file, nivel = nivel)
         for rama_hija in self.ramas_hijas:
@@ -118,13 +118,10 @@ class Rama:
         Devuelve el número total de ramificaciones que existen a partir de la rama
         La propia rama cuenta como una ramificación
         """
-        num_ramas = 0
-        if len(self.ramas_hijas) == 0:
-            return 1
-        else:
-            for rama_hija in self.ramas_hijas:
-                num_ramas += rama_hija.num_ramas()
-            return num_ramas + 1
+        num_ramas = 1
+        for rama_hija in self.ramas_hijas:
+            num_ramas += rama_hija.num_ramas()
+        return num_ramas
     
     def num_frutos(self) -> int:
         """

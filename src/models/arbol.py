@@ -57,4 +57,4 @@ class Arbol:
         """
         Devuelve el número total de frutos que tiene el árbol
         """
-        return self.tronco.num_ramas()
+        return self.tronco.num_frutos()

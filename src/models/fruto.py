@@ -52,7 +52,7 @@ class Fruto:
         """
         Anota un resumen del fruto en un archivo .txt
         """
-        file.write(f"{nivel}     - Fruto -> Tamano: {self.tamano * 100}cm. Estado: {estados[self.estado]}.\n")
+        file.write(f"{nivel}     - Fruto -> Tamano: {(self.tamano * 100):.2f}cm. Estado: {estados[self.estado]}.\n")
     
     def dibujar_fruto(self, plotter: pv.Plotter) -> None:
         """

@@ -39,6 +39,11 @@
                             "tamano": 0.25,
                             "estado": 2,
                             "altura_rama": 0.5
+                        },
+                        {
+                            "tamano": 0.25,
+                            "estado": 4,
+                            "altura_rama": 0.9
                         }
                     ]
                 }
@@ -62,5 +67,11 @@
             ]
         }
     ],
-    "frutos": []
+    "frutos": [
+        {
+            "tamano": 0.55,
+            "estado": 2,
+            "altura_rama": 0.5
+        }
+    ]
 }

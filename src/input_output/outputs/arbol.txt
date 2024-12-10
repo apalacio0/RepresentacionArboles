@@ -1,20 +1,22 @@
 RESUMEN DEL ARBOL:
 ======================
 - Numero de ramas:  4.
-- Numero de frutos: 4.
+- Numero de frutos: 7.
 
 
 ESTRUCTURA DEL ARBOL:
 ======================
-- Rama -> Longitud: 10.0m. Radio: 0.5m.
+- Rama -> Longitud: 10.00m. Radio: 0.50m.
+     - Fruto -> Tamano: 55.00cm. Estado: Para coger.
 
-     - Rama -> Longitud: 5.0m. Radio: 0.3m.
-          - Fruto -> Tamano: 35.0cm. Estado: Recien nacido.
+     - Rama -> Longitud: 5.00m. Radio: 0.30m.
+          - Fruto -> Tamano: 35.00cm. Estado: Recien nacido.
 
-     - Rama -> Longitud: 6.0m. Radio: 0.3m.
-          - Fruto -> Tamano: 35.0cm. Estado: Creciendo.
-          - Fruto -> Tamano: 35.0cm. Estado: Pasado.
-          - Fruto -> Tamano: 35.0cm. Estado: Maduro.
+     - Rama -> Longitud: 6.00m. Radio: 0.30m.
+          - Fruto -> Tamano: 35.00cm. Estado: Creciendo.
+          - Fruto -> Tamano: 35.00cm. Estado: Pasado.
+          - Fruto -> Tamano: 35.00cm. Estado: Maduro.
 
-          - Rama -> Longitud: 4.0m. Radio: 0.2m.
-               - Fruto -> Tamano: 25.0cm. Estado: Para coger.
+          - Rama -> Longitud: 4.00m. Radio: 0.20m.
+               - Fruto -> Tamano: 25.00cm. Estado: Para coger.
+               - Fruto -> Tamano: 25.00cm. Estado: Pasado.
