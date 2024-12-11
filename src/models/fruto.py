@@ -1,6 +1,7 @@
 from __future__ import annotations
 from typing import TextIO
 import pyvista as pv
+import math
 
 # Diccionarios
 
@@ -69,5 +70,17 @@ class Fruto:
         Devuelve esa posición
         """
         factor = rama.longitud * altura_rama
-        posicion = tuple(ori + dir * factor for ori, dir in zip(rama.origen, rama.direccion))
+        posicion_dentro_rama = tuple(ori + dir * factor for ori, dir in zip(rama.origen, rama.direccion))
+        rx = rama.direccion[0]
+        ry = rama.direccion[1]
+        rz = rama.direccion[2]
+        radio = rama.grosor + self.tamano
+        if math.isclose(abs(rz), 1, rel_tol=1e-9):
+            posicion = tuple(p * radio for p in (0, 0, -1))
+        else:
+            mu = 1 / math.sqrt((rx ** 2 + ry ** 2) * rz ** 2 + (rz ** 2 - 1) ** 2)
+            posicion = tuple(p + r * radio for p, r in zip(
+                posicion_dentro_rama, 
+                (mu * rx * rz, mu * ry * rz, mu * (rz ** 2 - 1))
+            ))
         return posicion
