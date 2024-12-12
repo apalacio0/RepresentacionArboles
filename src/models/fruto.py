@@ -14,11 +14,11 @@ estados = {
 }
 
 colores = {
-    0: [50, 185, 0],
-    1: [210, 250, 50],
-    2: [255, 185, 0],
-    3: [255, 0, 0],
-    4: [135, 85, 0]
+    0: [50, 185, 0],   # verde
+    1: [210, 250, 50], # amarillo
+    2: [255, 185, 0],  # naranja
+    3: [255, 0, 0],    # rojo
+    4: [135, 85, 0]    # marrón
 }
 
 # Implementación de la clase Fruto
@@ -71,12 +71,10 @@ class Fruto:
         """
         factor = rama.longitud * altura_rama
         posicion_dentro_rama = tuple(ori + dir * factor for ori, dir in zip(rama.origen, rama.direccion))
-        rx = rama.direccion[0]
-        ry = rama.direccion[1]
-        rz = rama.direccion[2]
+        rx, ry, rz = rama.direccion
         radio = rama.grosor + self.tamano
-        if math.isclose(abs(rz), 1, rel_tol=1e-9):
-            posicion = tuple(p * radio for p in (0, 0, -1))
+        if math.isclose(abs(rz), 1, rel_tol = 1e-9):
+            posicion = (0, 0, (-1) * radio)
         else:
             mu = 1 / math.sqrt((rx ** 2 + ry ** 2) * rz ** 2 + (rz ** 2 - 1) ** 2)
             posicion = tuple(p + r * radio for p, r in zip(

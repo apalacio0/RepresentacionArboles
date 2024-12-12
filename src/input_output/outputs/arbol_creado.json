@@ -1,0 +1,351 @@
+{
+    "longitud": 12.4,
+    "grosor": 1.18,
+    "altura_rama_madre": 0.0,
+    "phi": 0.0,
+    "theta": 0.0,
+    "ramas_hijas": [
+        {
+            "longitud": 3.76,
+            "grosor": 0.69,
+            "altura_rama_madre": 0.53,
+            "phi": 305.85,
+            "theta": 83.86,
+            "ramas_hijas": [
+                {
+                    "longitud": 1.41,
+                    "grosor": 0.37,
+                    "altura_rama_madre": 0.57,
+                    "phi": 295.46,
+                    "theta": 70.88,
+                    "ramas_hijas": [
+                        {
+                            "longitud": 0.58,
+                            "grosor": 0.25,
+                            "altura_rama_madre": 0.37,
+                            "phi": 71.9,
+                            "theta": 50.6,
+                            "ramas_hijas": [],
+                            "frutos": [
+                                {
+                                    "tamano": 0.32,
+                                    "estado": 1,
+                                    "altura_rama": 0.15
+                                },
+                                {
+                                    "tamano": 0.48,
+                                    "estado": 2,
+                                    "altura_rama": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "longitud": 0.6,
+                            "grosor": 0.22,
+                            "altura_rama_madre": 0.65,
+                            "phi": 58.33,
+                            "theta": 65.36,
+                            "ramas_hijas": [],
+                            "frutos": [
+                                {
+                                    "tamano": 0.4,
+                                    "estado": 4,
+                                    "altura_rama": 0.16
+                                },
+                                {
+                                    "tamano": 0.28,
+                                    "estado": 1,
+                                    "altura_rama": 0.32
+                                },
+                                {
+                                    "tamano": 0.49,
+                                    "estado": 1,
+                                    "altura_rama": 0.27
+                                },
+                                {
+                                    "tamano": 0.4,
+                                    "estado": 3,
+                                    "altura_rama": 0.37
+                                },
+                                {
+                                    "tamano": 0.38,
+                                    "estado": 3,
+                                    "altura_rama": 0.9
+                                }
+                            ]
+                        },
+                        {
+                            "longitud": 0.51,
+                            "grosor": 0.29,
+                            "altura_rama_madre": 0.41,
+                            "phi": 221.77,
+                            "theta": 74.51,
+                            "ramas_hijas": [],
+                            "frutos": []
+                        }
+                    ],
+                    "frutos": [
+                        {
+                            "tamano": 0.22,
+                            "estado": 3,
+                            "altura_rama": 0.91
+                        },
+                        {
+                            "tamano": 0.37,
+                            "estado": 2,
+                            "altura_rama": 0.29
+                        },
+                        {
+                            "tamano": 0.31,
+                            "estado": 3,
+                            "altura_rama": 0.93
+                        }
+                    ]
+                }
+            ],
+            "frutos": [
+                {
+                    "tamano": 0.43,
+                    "estado": 3,
+                    "altura_rama": 0.43
+                },
+                {
+                    "tamano": 0.28,
+                    "estado": 1,
+                    "altura_rama": 0.81
+                }
+            ]
+        },
+        {
+            "longitud": 5.09,
+            "grosor": 0.63,
+            "altura_rama_madre": 0.23,
+            "phi": 130.98,
+            "theta": 33.5,
+            "ramas_hijas": [],
+            "frutos": [
+                {
+                    "tamano": 0.23,
+                    "estado": 0,
+                    "altura_rama": 0.76
+                },
+                {
+                    "tamano": 0.32,
+                    "estado": 1,
+                    "altura_rama": 0.74
+                },
+                {
+                    "tamano": 0.44,
+                    "estado": 2,
+                    "altura_rama": 0.17
+                },
+                {
+                    "tamano": 0.31,
+                    "estado": 2,
+                    "altura_rama": 0.75
+                },
+                {
+                    "tamano": 0.49,
+                    "estado": 1,
+                    "altura_rama": 0.33
+                }
+            ]
+        },
+        {
+            "longitud": 6.53,
+            "grosor": 0.76,
+            "altura_rama_madre": 0.73,
+            "phi": 19.88,
+            "theta": 59.75,
+            "ramas_hijas": [
+                {
+                    "longitud": 2.14,
+                    "grosor": 0.55,
+                    "altura_rama_madre": 0.08,
+                    "phi": 87.06,
+                    "theta": 45.7,
+                    "ramas_hijas": [
+                        {
+                            "longitud": 0.9,
+                            "grosor": 0.29,
+                            "altura_rama_madre": 0.3,
+                            "phi": 167.73,
+                            "theta": 65.67,
+                            "ramas_hijas": [],
+                            "frutos": [
+                                {
+                                    "tamano": 0.34,
+                                    "estado": 4,
+                                    "altura_rama": 0.55
+                                },
+                                {
+                                    "tamano": 0.24,
+                                    "estado": 4,
+                                    "altura_rama": 0.45
+                                },
+                                {
+                                    "tamano": 0.39,
+                                    "estado": 4,
+                                    "altura_rama": 0.21
+                                }
+                            ]
+                        },
+                        {
+                            "longitud": 1.24,
+                            "grosor": 0.31,
+                            "altura_rama_madre": 0.13,
+                            "phi": 127.12,
+                            "theta": 47.06,
+                            "ramas_hijas": [],
+                            "frutos": []
+                        }
+                    ],
+                    "frutos": [
+                        {
+                            "tamano": 0.22,
+                            "estado": 2,
+                            "altura_rama": 0.49
+                        },
+                        {
+                            "tamano": 0.27,
+                            "estado": 2,
+                            "altura_rama": 0.19
+                        },
+                        {
+                            "tamano": 0.41,
+                            "estado": 3,
+                            "altura_rama": 0.7
+                        }
+                    ]
+                },
+                {
+                    "longitud": 3.7,
+                    "grosor": 0.48,
+                    "altura_rama_madre": 0.75,
+                    "phi": 100.68,
+                    "theta": 59.59,
+                    "ramas_hijas": [
+                        {
+                            "longitud": 1.27,
+                            "grosor": 0.33,
+                            "altura_rama_madre": 0.6,
+                            "phi": 168.37,
+                            "theta": 31.23,
+                            "ramas_hijas": [],
+                            "frutos": []
+                        },
+                        {
+                            "longitud": 1.93,
+                            "grosor": 0.28,
+                            "altura_rama_madre": 0.64,
+                            "phi": 214.34,
+                            "theta": 68.02,
+                            "ramas_hijas": [],
+                            "frutos": [
+                                {
+                                    "tamano": 0.25,
+                                    "estado": 1,
+                                    "altura_rama": 0.19
+                                },
+                                {
+                                    "tamano": 0.47,
+                                    "estado": 1,
+                                    "altura_rama": 0.17
+                                }
+                            ]
+                        },
+                        {
+                            "longitud": 1.82,
+                            "grosor": 0.36,
+                            "altura_rama_madre": 0.43,
+                            "phi": 140.14,
+                            "theta": 43.48,
+                            "ramas_hijas": [],
+                            "frutos": [
+                                {
+                                    "tamano": 0.24,
+                                    "estado": 4,
+                                    "altura_rama": 0.27
+                                }
+                            ]
+                        }
+                    ],
+                    "frutos": [
+                        {
+                            "tamano": 0.28,
+                            "estado": 3,
+                            "altura_rama": 0.54
+                        }
+                    ]
+                },
+                {
+                    "longitud": 2.78,
+                    "grosor": 0.53,
+                    "altura_rama_madre": 0.51,
+                    "phi": 147.5,
+                    "theta": 31.29,
+                    "ramas_hijas": [
+                        {
+                            "longitud": 0.95,
+                            "grosor": 0.33,
+                            "altura_rama_madre": 0.85,
+                            "phi": 83.46,
+                            "theta": 62.35,
+                            "ramas_hijas": [],
+                            "frutos": [
+                                {
+                                    "tamano": 0.43,
+                                    "estado": 0,
+                                    "altura_rama": 0.26
+                                },
+                                {
+                                    "tamano": 0.27,
+                                    "estado": 4,
+                                    "altura_rama": 0.88
+                                },
+                                {
+                                    "tamano": 0.2,
+                                    "estado": 2,
+                                    "altura_rama": 0.67
+                                },
+                                {
+                                    "tamano": 0.32,
+                                    "estado": 3,
+                                    "altura_rama": 0.13
+                                }
+                            ]
+                        },
+                        {
+                            "longitud": 0.87,
+                            "grosor": 0.36,
+                            "altura_rama_madre": 0.86,
+                            "phi": 271.63,
+                            "theta": 50.76,
+                            "ramas_hijas": [],
+                            "frutos": []
+                        }
+                    ],
+                    "frutos": [
+                        {
+                            "tamano": 0.23,
+                            "estado": 2,
+                            "altura_rama": 0.06
+                        },
+                        {
+                            "tamano": 0.47,
+                            "estado": 0,
+                            "altura_rama": 0.39
+                        },
+                        {
+                            "tamano": 0.23,
+                            "estado": 4,
+                            "altura_rama": 0.56
+                        }
+                    ]
+                }
+            ],
+            "frutos": []
+        }
+    ],
+    "frutos": []
+}
