@@ -1,77 +1,51 @@
 RESUMEN DEL ARBOL:
 ======================
-- Numero de ramas:  18.
-- Numero de frutos: 34.
+- Numero de ramas:  7.
+- Numero de frutos: 30.
 
 
 ESTRUCTURA DEL ARBOL:
 ======================
-- Rama -> Longitud: 12.40m. Radio: 1.18m.
+- Rama -> Longitud: 19.53m. Radio: 1.29m.
 
-     - Rama -> Longitud: 3.76m. Radio: 0.69m.
-          - Fruto -> Tamano: 43.00cm. Estado: Maduro.
-          - Fruto -> Tamano: 28.00cm. Estado: Creciendo.
-
-          - Rama -> Longitud: 1.41m. Radio: 0.37m.
-               - Fruto -> Tamano: 22.00cm. Estado: Maduro.
-               - Fruto -> Tamano: 37.00cm. Estado: Para coger.
-               - Fruto -> Tamano: 31.00cm. Estado: Maduro.
-
-               - Rama -> Longitud: 0.58m. Radio: 0.25m.
-                    - Fruto -> Tamano: 32.00cm. Estado: Creciendo.
-                    - Fruto -> Tamano: 48.00cm. Estado: Para coger.
-
-               - Rama -> Longitud: 0.60m. Radio: 0.22m.
-                    - Fruto -> Tamano: 40.00cm. Estado: Pasado.
-                    - Fruto -> Tamano: 28.00cm. Estado: Creciendo.
-                    - Fruto -> Tamano: 49.00cm. Estado: Creciendo.
-                    - Fruto -> Tamano: 40.00cm. Estado: Maduro.
-                    - Fruto -> Tamano: 38.00cm. Estado: Maduro.
-
-               - Rama -> Longitud: 0.51m. Radio: 0.29m.
-
-     - Rama -> Longitud: 5.09m. Radio: 0.63m.
-          - Fruto -> Tamano: 23.00cm. Estado: Recien nacido.
-          - Fruto -> Tamano: 32.00cm. Estado: Creciendo.
-          - Fruto -> Tamano: 44.00cm. Estado: Para coger.
+     - Rama -> Longitud: 15.17m. Radio: 0.93m.
+          - Fruto -> Tamano: 33.00cm. Estado: Pasado.
+          - Fruto -> Tamano: 49.00cm. Estado: Recien nacido.
+          - Fruto -> Tamano: 28.00cm. Estado: Para coger.
           - Fruto -> Tamano: 31.00cm. Estado: Para coger.
-          - Fruto -> Tamano: 49.00cm. Estado: Creciendo.
+          - Fruto -> Tamano: 44.00cm. Estado: Creciendo.
+          - Fruto -> Tamano: 46.00cm. Estado: Pasado.
+          - Fruto -> Tamano: 47.00cm. Estado: Para coger.
+          - Fruto -> Tamano: 50.00cm. Estado: Maduro.
+          - Fruto -> Tamano: 32.00cm. Estado: Para coger.
+          - Fruto -> Tamano: 46.00cm. Estado: Creciendo.
+          - Fruto -> Tamano: 30.00cm. Estado: Para coger.
+          - Fruto -> Tamano: 40.00cm. Estado: Para coger.
 
-     - Rama -> Longitud: 6.53m. Radio: 0.76m.
-
-          - Rama -> Longitud: 2.14m. Radio: 0.55m.
-               - Fruto -> Tamano: 22.00cm. Estado: Para coger.
-               - Fruto -> Tamano: 27.00cm. Estado: Para coger.
-               - Fruto -> Tamano: 41.00cm. Estado: Maduro.
-
-               - Rama -> Longitud: 0.90m. Radio: 0.29m.
-                    - Fruto -> Tamano: 34.00cm. Estado: Pasado.
-                    - Fruto -> Tamano: 24.00cm. Estado: Pasado.
-                    - Fruto -> Tamano: 39.00cm. Estado: Pasado.
-
-               - Rama -> Longitud: 1.24m. Radio: 0.31m.
-
-          - Rama -> Longitud: 3.70m. Radio: 0.48m.
-               - Fruto -> Tamano: 28.00cm. Estado: Maduro.
-
-               - Rama -> Longitud: 1.27m. Radio: 0.33m.
-
-               - Rama -> Longitud: 1.93m. Radio: 0.28m.
-                    - Fruto -> Tamano: 25.00cm. Estado: Creciendo.
-                    - Fruto -> Tamano: 47.00cm. Estado: Creciendo.
-
-               - Rama -> Longitud: 1.82m. Radio: 0.36m.
-                    - Fruto -> Tamano: 24.00cm. Estado: Pasado.
-
-          - Rama -> Longitud: 2.78m. Radio: 0.53m.
-               - Fruto -> Tamano: 23.00cm. Estado: Para coger.
+          - Rama -> Longitud: 11.33m. Radio: 0.67m.
+               - Fruto -> Tamano: 29.00cm. Estado: Recien nacido.
+               - Fruto -> Tamano: 32.00cm. Estado: Creciendo.
                - Fruto -> Tamano: 47.00cm. Estado: Recien nacido.
-               - Fruto -> Tamano: 23.00cm. Estado: Pasado.
+               - Fruto -> Tamano: 28.00cm. Estado: Recien nacido.
+               - Fruto -> Tamano: 32.00cm. Estado: Recien nacido.
+               - Fruto -> Tamano: 38.00cm. Estado: Maduro.
 
-               - Rama -> Longitud: 0.95m. Radio: 0.33m.
-                    - Fruto -> Tamano: 43.00cm. Estado: Recien nacido.
-                    - Fruto -> Tamano: 27.00cm. Estado: Pasado.
-                    - Fruto -> Tamano: 20.00cm. Estado: Para coger.
-                    - Fruto -> Tamano: 32.00cm. Estado: Maduro.
+               - Rama -> Longitud: 3.42m. Radio: 0.46m.
+                    - Fruto -> Tamano: 28.00cm. Estado: Recien nacido.
+                    - Fruto -> Tamano: 43.00cm. Estado: Pasado.
 
-               - Rama -> Longitud: 0.87m. Radio: 0.36m.
+               - Rama -> Longitud: 5.59m. Radio: 0.53m.
+                    - Fruto -> Tamano: 49.00cm. Estado: Para coger.
+                    - Fruto -> Tamano: 31.00cm. Estado: Creciendo.
+                    - Fruto -> Tamano: 21.00cm. Estado: Maduro.
+                    - Fruto -> Tamano: 24.00cm. Estado: Maduro.
+
+          - Rama -> Longitud: 7.36m. Radio: 0.56m.
+               - Fruto -> Tamano: 49.00cm. Estado: Pasado.
+               - Fruto -> Tamano: 36.00cm. Estado: Para coger.
+               - Fruto -> Tamano: 47.00cm. Estado: Para coger.
+
+               - Rama -> Longitud: 4.02m. Radio: 0.41m.
+                    - Fruto -> Tamano: 39.00cm. Estado: Para coger.
+                    - Fruto -> Tamano: 41.00cm. Estado: Pasado.
+                    - Fruto -> Tamano: 48.00cm. Estado: Maduro.

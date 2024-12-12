@@ -1,13 +1,11 @@
 import json
 import random
+import math
 
 from models.arbol import Arbol
+from constantes import *
 
-MAX_NIVELES = 4
-MAX_RAMAS_HIJAS = 3
-MAX_FRUTOS = 5
-
-class GeneradorArbol:
+class GeneradorJSONArbol:
 
     def __init__(self, max_niveles: int = MAX_NIVELES) -> Arbol:
         self.arbol = self.generar_arbol(max_niveles = max_niveles)
@@ -23,7 +21,8 @@ class GeneradorArbol:
             "altura_rama": round(random.uniform(0.0, 1.0), 2)
         }
     
-    def generar_rama(self, nivel: int = 0, max_niveles: int = MAX_NIVELES, longitud_rama_madre: float = 0.0, grosor_rama_madre: float = 0.0) -> dict:
+    def generar_rama(self, nivel: int = 0, max_niveles: int = MAX_NIVELES,
+                     longitud_rama_madre: float = 0.0, grosor_rama_madre: float = 0.0) -> dict:
         if nivel >= max_niveles:
             return None
         
@@ -58,11 +57,12 @@ class GeneradorArbol:
         return arbol_dict
     
     def datos_tronco(self) -> dict:
-        longitud = round(random.uniform(10.0, 15.0), 2)   # mejorar
-        grosor = round(random.uniform(0.7, 1.4), 2)
+        longitud = round(random.uniform(MIN_LONGITUD_TRONCO, MAX_LONGITUD_RAMA), 2)   # mejorar
+        grosor = round(random.uniform(MIN_GROSOR_TRONCO, MAX_GROSOR_TRONCO), 2)
         altura_rama_madre = 0.0
-        phi, theta = 0.0, 0.0
-        num_ramas_hijas = random.randint(0, MAX_RAMAS_HIJAS)   # mejorar
+        phi = 0.0
+        theta = 0.0
+        num_ramas_hijas = self.calcular_num_ramas_hijas(longitud = longitud)
         num_frutos = 0
         
         return {
@@ -76,13 +76,13 @@ class GeneradorArbol:
         }
     
     def datos_rama(self, longitud_rama_madre: float, grosor_rama_madre:float) -> dict:
-        longitud = round(random.uniform(longitud_rama_madre * 0.3, longitud_rama_madre * 0.6), 2)
+        longitud = round(random.uniform(longitud_rama_madre * 0.3, longitud_rama_madre * 0.8), 2)
         grosor = round(random.uniform(grosor_rama_madre * 0.5, grosor_rama_madre * 0.8), 2)
         altura_rama_madre = round(random.uniform(0.0, 1.0), 2)
         phi = round(random.uniform(0.0, 360.0), 2)
         theta = round(random.uniform(25.0, 90.0), 2)
-        num_ramas_hijas = random.randint(0, MAX_RAMAS_HIJAS)   # mejorar
-        num_frutos = random.randint(0,MAX_FRUTOS)   # mejorar
+        num_ramas_hijas = self.calcular_num_ramas_hijas(longitud = longitud)
+        num_frutos = self.calcular_num_frutos(longitud = longitud)
         
         return {
             "longitud": longitud,
@@ -93,3 +93,13 @@ class GeneradorArbol:
             "num_ramas_hijas": num_ramas_hijas,
             "num_frutos": num_frutos
         }
+    
+    def calcular_num_ramas_hijas(self, longitud: float) -> int:
+        max_ramas_hijas = math.trunc(longitud / MAX_LONGITUD_RAMA * 4)
+        num_ramas = random.randint(0, max_ramas_hijas)
+        return num_ramas
+    
+    def calcular_num_frutos(self, longitud: float) -> int:
+        max_frutos = math.trunc(longitud / MAX_FRUTOS * 4)
+        num_frutos = random.randint(0, max_frutos)
+        return num_frutos
