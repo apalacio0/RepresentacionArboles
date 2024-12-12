@@ -4,7 +4,7 @@ import math
 
 from models.arbol import Arbol
 from constantes import *
-
+ 
 class GeneradorJSONArbol:
 
     def __init__(self, max_niveles: int = MAX_NIVELES) -> Arbol:
