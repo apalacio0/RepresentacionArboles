@@ -132,3 +132,22 @@ class Rama:
         for rama_hija in self.ramas_hijas:
             num_frutos += rama_hija.num_frutos()
         return num_frutos
+    
+    def num_frutos_con_estado(self, estado: int) -> int:
+        """
+        Devuelve el número total de frutos con estado de entrada
+        que hay en la rama o en una de sus ramificaciones
+        """
+        num_frutos_con_estado = sum(1 for fruto in self.frutos if fruto.estado == estado)
+        for rama_hija in self.ramas_hijas:
+            num_frutos_con_estado += rama_hija.num_frutos_con_estado(estado = estado)
+        return num_frutos_con_estado
+    
+    def calcular_volumen(self) -> float:
+        """
+        Devuelve el volumen de la rama junto al de todas sus ramificaciones
+        """
+        volumen = math.pi * self.grosor * self.longitud
+        for rama_hija in self.ramas_hijas:
+            volumen += rama_hija.calcular_volumen()
+        return volumen

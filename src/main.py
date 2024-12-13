@@ -1,3 +1,4 @@
+import random
 import pyvista as pv
 
 from models.arbol import Arbol

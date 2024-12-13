@@ -80,7 +80,7 @@ class GeneradorJSONArbol:
         grosor = round(random.uniform(grosor_rama_madre * 0.5, grosor_rama_madre * 0.8), 2)
         altura_rama_madre = round(random.uniform(0.0, 1.0), 2)
         phi = round(random.uniform(0.0, 360.0), 2)
-        theta = round(random.uniform(25.0, 90.0), 2)
+        theta = round(random.uniform(25.0, 70.0), 2)
         num_ramas_hijas = self.calcular_num_ramas_hijas(longitud = longitud)
         num_frutos = self.calcular_num_frutos(longitud = longitud)
         
@@ -95,11 +95,17 @@ class GeneradorJSONArbol:
         }
     
     def calcular_num_ramas_hijas(self, longitud: float) -> int:
-        max_ramas_hijas = math.trunc(longitud / MAX_LONGITUD_RAMA * 4)
-        num_ramas = random.randint(0, max_ramas_hijas)
-        return num_ramas
+        escala = 5
+        media = longitud / MAX_LONGITUD_RAMA * escala
+        desviacion = 1
+        ramas_hijas_propuestas = random.gauss(mu = media, sigma = desviacion)
+        num_ramas_hijas = max(0, math.trunc(ramas_hijas_propuestas))
+        return num_ramas_hijas
     
     def calcular_num_frutos(self, longitud: float) -> int:
-        max_frutos = math.trunc(longitud / MAX_FRUTOS * 4)
-        num_frutos = random.randint(0, max_frutos)
+        escala = 4
+        media = longitud / MAX_LONGITUD_RAMA * escala
+        desviacion = 1
+        frutos_propuestos = random.gauss(mu = media, sigma = desviacion)
+        num_frutos = max(0, math.trunc(frutos_propuestos))
         return num_frutos

@@ -1,6 +1,8 @@
 import json
-from models.rama import Rama
 import pyvista as pv
+
+from models.rama import Rama
+from models.fruto import estados
 
 # Implementación de la clase Arbol
 
@@ -34,7 +36,9 @@ class Arbol:
             file.write("RESUMEN DEL ARBOL:\n")
             file.write("======================\n")
             file.write(f"- Numero de ramas:  {self.num_ramas()}.\n")
-            file.write(f"- Numero de frutos: {self.num_frutos()}.\n\n\n")
+            file.write(f"- Numero de frutos: {self.num_frutos()}. De los cuales hay:\n")
+            file.write(f"     {self.num_frutos_con_estado(2)} {estados[2]}, {self.num_frutos_con_estado(3)} {estados[3]} y {self.num_frutos_con_estado(4)} {estados[4]}.\n")
+            file.write(f"- Volumen total: {self.calcular_volumen():.2f}m^3.\n\n\n")
 
             file.write("ESTRUCTURA DEL ARBOL:\n")
             file.write("======================")
@@ -51,10 +55,27 @@ class Arbol:
         Devuelve el número total de ramificaciones que tiene el árbol
         El tronco cuenta como una ramificación
         """
-        return self.tronco.num_ramas()
+        num_ramas = self.tronco.num_ramas()
+        return num_ramas
     
     def num_frutos(self) -> int:
         """
         Devuelve el número total de frutos que tiene el árbol
         """
-        return self.tronco.num_frutos()
+        num_frutos = self.tronco.num_frutos()
+        return num_frutos
+    
+    def num_frutos_con_estado(self, estado: int) -> int:
+        """
+        Devuelve el número total de frutos con estado de entrada que tiene el árbol
+        """
+        num_frutos_con_estado = self.tronco.num_frutos_con_estado(estado = estado)
+        return num_frutos_con_estado
+
+    
+    def calcular_volumen(self) -> float:
+        """
+        Devuelve el volumen de todo el árbol
+        """
+        volumen = self.tronco.calcular_volumen()
+        return volumen
