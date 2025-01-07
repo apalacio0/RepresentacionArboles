@@ -82,3 +82,10 @@ class Fruto:
                 (mu * rx * rz, mu * ry * rz, mu * (rz ** 2 - 1))
             ))
         return posicion
+    
+    def calcular_volumen(self) -> float:
+        """
+        Devuelve el volumen del fruto
+        """
+        volumen = math.pi * self.tamano **2
+        return volumen

@@ -11,16 +11,16 @@ from models.fruto import Fruto
 class Rama:
     
     def __init__(self, longitud: float, grosor:float, rama_madre: Rama = None,
-                 altura_rama_madre: float = 0, phi: float = 0, theta: float = 0) -> None:
+                 altura_rama_madre: float = 0, origen: tuple = (0, 0, 0), phi: float = 0, theta: float = 0) -> None:
         """
         altura_rama_madre es el punto de la rama madre en el que aparece la rama (0, 1]
-        phi es el ángulo de rotación respecto al eje Z [0, 2*pi)
-        theta es el ángulo de rotación respecto al eje X [0, 2*pi)
+        phi es el ángulo de rotación respecto al eje Z
+        theta es el ángulo de rotación respecto al eje X
         """
         self.longitud: float = longitud
         self.grosor: float = grosor
         self.rama_madre: Rama = rama_madre
-        self.origen: tuple = self.calcular_origen(altura_rama_madre = altura_rama_madre)
+        self.origen: tuple = self.calcular_origen(origen = origen, altura_rama_madre = altura_rama_madre)
         self.direccion: tuple = self.calcular_direccion(phi = math.radians(phi), theta = math.radians(theta))
         factor = self.longitud / 2
         self.centro: tuple = tuple(ori + dir * factor for ori, dir in zip(self.origen, self.direccion))
@@ -28,7 +28,7 @@ class Rama:
         self.frutos: list[Fruto] = []
     
     @staticmethod
-    def crear_rama_desde_json(data: dict, rama_madre: Rama = None) -> Rama:
+    def crear_rama_desde_json(data: dict, origen: tuple = (0, 0, 0), rama_madre: Rama = None) -> Rama:
         """
         Crea una rama descrita en un archivo .json, junto con sus frutos y sus subramas
         Devuelve esa rama
@@ -38,6 +38,7 @@ class Rama:
             grosor = data['grosor'],
             rama_madre = rama_madre,
             altura_rama_madre = data['altura_rama_madre'],
+            origen = origen,
             phi = data['phi'],
             theta = data['theta']
         )
@@ -77,17 +78,17 @@ class Rama:
             for rama_hija in self.ramas_hijas:
                 rama_hija.dibujar_rama(plotter = plotter)
     
-    def calcular_origen(self, altura_rama_madre: float) -> tuple:
+    def calcular_origen(self, origen: tuple, altura_rama_madre: float) -> tuple:
         """
         Calcula la posición exacta en un mapa 3D en la que se encuentra la base de la rama
         Si la rama no tiene rama madre, entiende que es el tronco del árbol y lo situa en (0, 0, 0)
         Devuelve esa posición
         """
-        if self.rama_madre is None:
-            return (0, 0, 0)
-        else:
+        if origen == (0, 0, 0):
             factor = self.rama_madre.longitud * altura_rama_madre
             origen = tuple(ori + dir * factor for ori, dir in zip(self.rama_madre.origen, self.rama_madre.direccion))
+            return origen
+        else:
             return origen
     
     def calcular_direccion(self, phi: float, theta: float) -> tuple:
@@ -150,4 +151,23 @@ class Rama:
         volumen = math.pi * self.grosor * self.longitud
         for rama_hija in self.ramas_hijas:
             volumen += rama_hija.calcular_volumen()
+        return volumen
+    
+    def calcular_volumen_frutos(self) -> float:
+        """
+        Devuelve el volumen total de frutos de la rama junto al de sus ramificaciones
+        """
+        volumen = sum(fruto.calcular_volumen() for fruto in self.frutos)
+        for rama_hija in self.ramas_hijas:
+            volumen += rama_hija.calcular_volumen_frutos()
+        return volumen
+    
+    def calcular_volumen_frutos_con_estado(self, estados: list[int]) -> float:
+        """
+        Devuelve el volumen total de frutos con estado de entrada de la rama
+        junto al de sus ramificaciones
+        """
+        volumen = sum(fruto.calcular_volumen() for fruto in self.frutos if fruto.estado in estados)
+        for rama_hija in self.ramas_hijas:
+            volumen += rama_hija.calcular_volumen_frutos_con_estado(estados = estados)
         return volumen

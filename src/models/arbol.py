@@ -1,3 +1,4 @@
+from __future__ import annotations
 import json
 import pyvista as pv
 
@@ -8,23 +9,16 @@ from models.fruto import estados
 
 class Arbol:
 
-    def __init__(self, json_path: str) -> None:
+    def __init__(self, data: dict, origen: tuple = (0, 0, 0)) -> None:
         """
         El único atributo que tiene un objeto de la clase Arbol va a ser
         su tronco, que es un objeto de la clase Rama
         """
-        self.tronco: Rama = self.crear_arbol_desde_json(json_path = json_path)
+        self.tronco: Rama = Rama.crear_rama_desde_json(origen = origen, data = data, rama_madre = None)
     
-    def crear_arbol_desde_json(self, json_path: str) -> Rama:
-            """
-            Crea un árbol descrito en un archivo .json creando una rama que entiende
-            como tronco del árbol
-            Devuelve esa Rama
-            """
-            with open(file = json_path, mode = 'r') as file:
-                data = json.load(file)
-            tronco = Rama.crear_rama_desde_json(data = data)
-            return tronco
+    def crear_arbol_desde_json(self, data: dict) -> Arbol:
+        arbol = Arbol(data = data)
+        return arbol
     
     def resumen_a_txt(self, txt_path: str) -> None:
         """
@@ -37,8 +31,14 @@ class Arbol:
             file.write("======================\n")
             file.write(f"- Numero de ramas:  {self.num_ramas()}.\n")
             file.write(f"- Numero de frutos: {self.num_frutos()}. De los cuales hay:\n")
-            file.write(f"     {self.num_frutos_con_estado(2)} {estados[2]}, {self.num_frutos_con_estado(3)} {estados[3]} y {self.num_frutos_con_estado(4)} {estados[4]}.\n")
-            file.write(f"- Volumen total: {self.calcular_volumen():.2f}m^3.\n\n\n")
+            file.write(f"     {self.num_frutos_con_estado(estado = 2)} {estados[2]}.\n")
+            file.write(f"     {self.num_frutos_con_estado(estado = 3)} {estados[3]}.\n")
+            file.write(f"     {self.num_frutos_con_estado(estado = 4)} {estados[4]}.\n")
+            file.write(f"- Volumen total de madera: {self.calcular_volumen():.2f}m^3.\n")
+            file.write(f"- Volumen total de frutos: {self.calcular_volumen_frutos():.2f}m^3. De los cuales hay:\n")
+            file.write(f"     {self.calcular_volumen_frutos_con_estado(estados = [0, 1]):.2f}m^3 de frutos todavia por madurar.\n")
+            file.write(f"     {self.calcular_volumen_frutos_con_estado(estados = [2, 3]):.2f}m^3 de frutos dispuestos para consumo.\n")
+            file.write(f"     {self.calcular_volumen_frutos_con_estado(estados = [4]):.2f}m^3 de frutos pasados.\n\n\n")
 
             file.write("ESTRUCTURA DEL ARBOL:\n")
             file.write("======================")
@@ -78,4 +78,18 @@ class Arbol:
         Devuelve el volumen de todo el árbol
         """
         volumen = self.tronco.calcular_volumen()
+        return volumen
+    
+    def calcular_volumen_frutos(self) -> float:
+        """
+        Devuelve el volumen total de frutos del árbol
+        """
+        volumen = self.tronco.calcular_volumen_frutos()
+        return volumen
+    
+    def calcular_volumen_frutos_con_estado(self, estados: list[int]) -> float:
+        """
+        Devuelve el volumen total de frutos con estado de entrada del árbol
+        """
+        volumen = self.tronco.calcular_volumen_frutos_con_estado(estados = estados)
         return volumen
